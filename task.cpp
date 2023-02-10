@@ -1,38 +1,39 @@
 #include "task.hpp"
 
 void swap(int a, int b){
-        int temp = a;
+	int temp = a;
         a = b;
-        b = temp;
-}
+	b = temp;
+}	
 
 void fillRandom(int* arr, int size, int min, int max){
-        srand(time(nullptr));
-        for(int i = 0; i < size; i++){ 
-                arr[i] = rand() % (max - min + 1) + min;
-        }
+	srand(time(nullptr));
+	for(int i = 0; i < size; i++){
+		arr[i] = rand() % (max - min + 1) + min;
+	}
 }
 
 int showEl(const int* arr, int size, int N, int M){
-        static int st = 0;
-        static int ind = 0;
-        if(st >= M){
-                return 0;
-        }
-        for(int i = 0; i < M; i++){
-                std::cout << arr[ind] << " ";
-                ind++;
-        }
-        st++;
-        std::cout << std::endl;
-        showEl(arr, size, N, M);
-        return 0;
+	static int st = 0;
+	static int ind = 0;
+	if(st >= M){
+		return 0;
+	}
+	for(int i = 0; i < M; i++){
+		std::cout << arr[ind] << " ";
+		ind++;
+	}
+	st++;
+	std::cout << std::endl;
+	showEl(arr, size, N, M);
+	return 0;
 }
 int showEl2(const int* arr, int size, int N, int M){
         static int st = 0;
         static int ind = 0;
         if(st >= M){
-                return 0;
+        	
+		return 0;
         }
         for(int i = 0; i < M; i++){
                 std::cout << arr[ind] << " ";
@@ -49,6 +50,7 @@ void selectionSort(int *ar, int size){
                 swap(ar[i], ar[search(ar, size, i)]);
         }
 }
+
 
 int search(int *ar, int size, int i){
         int min = ar[i];
@@ -94,15 +96,17 @@ int getMin(const int* arr, int size){
         getMax(arr, size);
         return 0;
 }
+
 void fillRandom100(int* arr, int size){
-         srand(time(nullptr));
+	 srand(time(nullptr));
         for(int i = 0; i < size; i++){
                 arr[i] = rand() % 100;
         }
 }
 
 void showArray(int* arr, int size){
-        for(int i = 0; i < size; i++){
+       	for(int i = 0; i < size; i++){
                 std::cout << i << '\t' << arr[i] << std::endl;
-        }
+        } 
 }
+
